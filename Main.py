@@ -1,7 +1,7 @@
 import pygame
 import sys
 from pygame.locals import *
-
+print("BANADANDA")
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode((1200, 900))
 
