@@ -16,7 +16,6 @@ To play, click "p"
 
 I'd like to put words in the menus, and eventually buttons instead.
 
-This is a little change
 -----------------------------------------------------------------------------------------------------------------------
 """
 
