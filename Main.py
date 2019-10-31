@@ -42,6 +42,9 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GOLD = (255, 215, 0)
 
+# Initializing fonts
+GABRIOLA = pygame.font.match_font("gabriola")
+
 DISPLAY_WIDTH = 800  # Width of game screen
 DISPLAY_HEIGHT = 600  # Height of game screen
 GAME_NAME = "JT's RPG"  # Name of game
@@ -90,6 +93,7 @@ def game_run():
         # While game is not in Exit:
         gameDisplay.fill(WHITE)  # Make the game have a white background
         pygame.draw.rect(gameDisplay, BLACK, (400, 400, 50, 25))  # NOT NEEDED, just to make sure its working
+        displayMessage("PLAYING", DISPLAY_WIDTH / 3, 20, 50, GOLD)
         pygame.display.update()  # Updates the display, otherwise it just keeps it was initialized
 
 
@@ -99,10 +103,11 @@ def game_run():
 #       - Puts text in a button (Start Game, Settings, Load, Etc...)
 #       - Pops message up on screen (EXP, Item obtained, Etc...)
 #       - More . . . ?
-def displayMessage(text):
-    # NOTHING IN HERE YET!
-    while text:
-        exit()
+def displayMessage(Message_To_Display,X_Coordinate, Y_Coordinate, Font_Size, Color):
+    font = pygame.font.Font(GABRIOLA, Font_Size)
+    text = font.render(Message_To_Display, True, Color)
+    gameDisplay.blit(text, (X_Coordinate,Y_Coordinate))
+
 
 
 # @Purpose: To be the main controller for the main menu.
@@ -126,12 +131,13 @@ def game_mainMenu():
                 pygame.quit()  # Stops the program
                 quit()  # Closes everything
             if event.type == pygame.KEYDOWN:  # If there's a key pressed (key down)
-                if event.key == pygame.K_p:  # If the key pressed (key down) is " P "
+                if event.key == pygame.K_p:  # If the key pressed (key down) is " P "hhh
                     mainMenu = False  # End the loop, returning us back to game_run()
 
         # While in main menu:
         gameDisplay.fill(WHITE)  # Make the starting main Menu have a white background
         pygame.draw.rect(gameDisplay, RED, (400, 400, 50, 25))  # NOT NEEDED, just to make sure its working
+        displayMessage("MAIN MENU", DISPLAY_WIDTH/3, 20 , 50, GOLD)
         pygame.display.update()  # Updates the display, otherwise it just keeps it was initialized
 
 
@@ -159,6 +165,7 @@ def game_inventoryMenu():
         # While in inventory menu:
         gameDisplay.fill(BLACK)  # Make the inventory Menu have a black background
         pygame.draw.rect(gameDisplay, RED, (400, 400, 50, 25))  # NOT NEEDED, just to make sure its working
+        displayMessage("INVENTORY", DISPLAY_WIDTH / 3, 20, 50, GOLD)
         pygame.display.update()  # Updates the display, otherwise it just keeps it was initialized
 
 
