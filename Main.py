@@ -16,7 +16,7 @@ To play, click "p"
 
 I'd like to put words in the menus, and eventually buttons instead.
 
-line 19 comment Pycharm
+this is the line 19 comment pulling and modifying with the gu
 -----------------------------------------------------------------------------------------------------------------------
 """
 
